@@ -5,7 +5,8 @@ node {
 //  }
   stage('Get code from SCM') {
 //    dir('${WORKSPACE}/src/github.com/pktanksali/word-cloud-generator') {
-      checkout changelog: false, poll: false, scm: [$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], subdir: '${WORKSPACE}/src/github.com/pktanksali/word-cloud-generator', userRemoteConfigs: [[url: 'https://github.com/pktanksali/learning-iac.git']]]
+      checkout changelog: false, poll: false, scm: [$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], subdir: '${WORKSPACE}/src/github.com/pktanksali/word-cloud-generator', userRemoteConfigs: [[url: 'https://github.com/pktanksali/word-cloud-generator.git']]]
+      sh 'pwd; ls; cd src/github.com/pktanksali/word-cloud-generator; ls'
 //    }
   }
   stage('Cleanup') {
